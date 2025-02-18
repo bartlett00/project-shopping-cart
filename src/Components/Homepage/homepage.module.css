@@ -1,0 +1,14 @@
+* {
+  background-color: #f9f7f7;
+}
+
+.mainBanner {
+  text-align: center;
+  color: #112d4e;
+}
+
+/*TODO: Fix editor not recognizing composes keyword*/
+.storeBanner {
+  composes: mainBanner;
+  color: #112d4e;
+}
