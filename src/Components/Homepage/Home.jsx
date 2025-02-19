@@ -25,10 +25,8 @@ function StoreBanner() {
 export default function Home() {
   return (
     <>
-      <Nav />
       <MainBanner />
       <StoreBanner />
-      <Footer />
     </>
   );
 }
