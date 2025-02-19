@@ -1,6 +1,4 @@
 import styles from "./homepage.module.css";
-import Nav from "../Navbar/Nav";
-import Footer from "../Footer/Footer";
 
 function MainBanner() {
   return (

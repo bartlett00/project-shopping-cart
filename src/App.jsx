@@ -5,21 +5,21 @@ import Error from "./Components/Error";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PageWrapper from "./Components/PageWrapper/PageWrapper";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-    errorElement: <Error />,
-  },
-  {
-    path: "store",
-    element: <Store />,
-  },
-  {
-    path: "cart",
-    element: <Cart />,
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Home />,
+//     errorElement: <Error />,
+//   },
+//   {
+//     path: "store",
+//     element: <Store />,
+//   },
+//   {
+//     path: "cart",
+//     element: <Cart />,
+//   },
+// ]);
 
 const newRouter = createBrowserRouter([
   {

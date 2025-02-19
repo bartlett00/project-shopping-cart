@@ -8,10 +8,11 @@ const testItems = [
     id: 1,
     title: "Placeholder Item",
     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    quantity: 0,
   },
 ];
 
-function Cards({ items, setCartCount, cartCount }) {
+function Cards({ items, setCartCount, cartCount, setCart, cart }) {
   return (
     <>
       {items.map((item) => {
@@ -21,6 +22,8 @@ function Cards({ items, setCartCount, cartCount }) {
             item={item}
             setCartCount={setCartCount}
             cartCount={cartCount}
+            setCart={setCart}
+            cart={cart}
           />
         );
       })}
@@ -29,7 +32,7 @@ function Cards({ items, setCartCount, cartCount }) {
 }
 
 export default function Store() {
-  const { cartCount, setCartCount } = useOutletContext();
+  const { cartCount, setCartCount, setCart, cart } = useOutletContext();
   return (
     <div>
       <h1>Find something you&#39;ll love.</h1>
@@ -37,6 +40,8 @@ export default function Store() {
         items={testItems}
         setCartCount={setCartCount}
         cartCount={cartCount}
+        setCart={setCart}
+        cart={cart}
       />
     </div>
   );
@@ -46,4 +51,6 @@ Cards.propTypes = {
   items: PropTypes.array,
   setCartCount: PropTypes.func,
   cartCount: PropTypes.number,
+  setCart: PropTypes.func,
+  cart: PropTypes.object,
 };
