@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -11,7 +10,7 @@ export default function Nav({ cartCount }) {
   return (
     <nav>
       <div>Orange</div>
-      <Link to="/">Homepage</Link>
+      <Link to="/home">Homepage</Link>
       <Link to="/store">Store</Link>
       <CartIcon cartCount={cartCount} />
     </nav>

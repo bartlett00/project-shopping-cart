@@ -1,4 +1,5 @@
 import styles from "./homepage.module.css";
+import { Link } from "react-router-dom";
 
 function MainBanner() {
   return (
@@ -15,7 +16,7 @@ function StoreBanner() {
     <div className={styles.storeBanner}>
       <h2>Join the fun.</h2>
       <button>Sign Up</button>
-      <button>Shop</button>
+      <Link to="/store">Shop</Link>
     </div>
   );
 }
