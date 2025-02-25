@@ -2,6 +2,8 @@ import Card from "../Card/Card";
 import PropTypes from "prop-types";
 import { useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "./store.module.css";
 
 // const testItems = [
 //   {
@@ -48,8 +50,9 @@ export default function Store() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.store}>
       <h1>Find something you&#39;ll love.</h1>
+      <Link to="/cart">Checkout</Link>
       <Cards
         items={data}
         setCartCount={setCartCount}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div>
+    <footer>
       <div>
         <h1>Address</h1>
         <p>123 Fake Address, Province, Country</p>
@@ -16,6 +16,6 @@ export default function Footer() {
         <Link to="/store">Store</Link>
         <Link to="/cart">Cart</Link>
       </div>
-    </div>
+    </footer>
   );
 }

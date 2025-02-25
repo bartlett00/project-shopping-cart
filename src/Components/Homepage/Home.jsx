@@ -23,9 +23,9 @@ function StoreBanner() {
 
 export default function Home() {
   return (
-    <>
+    <div className={styles.home}>
       <MainBanner />
       <StoreBanner />
-    </>
+    </div>
   );
 }
