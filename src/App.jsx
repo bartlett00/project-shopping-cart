@@ -11,7 +11,7 @@ const newRouter = createBrowserRouter([
     element: <PageWrapper />,
     errorElement: <Error />,
     children: [
-      { index: true, path: "home", element: <Home /> },
+      { path: "home", element: <Home /> },
       { path: "store", element: <Store /> },
       { path: "cart", element: <Cart /> },
     ],
