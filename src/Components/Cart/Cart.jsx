@@ -1,12 +1,8 @@
 import { useOutletContext } from "react-router-dom";
 import CartCard from "../CartCard/CartCard";
+import styles from "./cart.module.css";
 
 export default function Cart() {
-  //TODO: display items in cart in way similar to store page
-  //TODO: prevent multiple "stacks" of item cards from being added to cart page
-  // add quantity to cart item if it already exists
-  //TODO: add some kind of feedback that tells user when they successfully added an item to the cart
-
   const { cartCount, setCartCount, cart, setCart } = useOutletContext();
 
   function handleCheckout() {
@@ -17,10 +13,14 @@ export default function Cart() {
   }
 
   return (
-    <div>
-      <h1>Your Cart</h1>
-
-      <div>
+    <div className={styles.cart}>
+      <div className={styles.headerAndPurchase}>
+        <h1>Your Cart</h1>
+        <button className={styles.purchase} onClick={handleCheckout}>
+          Purchase
+        </button>
+      </div>
+      <div className={styles.cartItems}>
         {cart.map((item) => {
           return (
             <CartCard
@@ -33,8 +33,12 @@ export default function Cart() {
             />
           );
         })}
+        {cart.length === 0 ? (
+          <h1 className={styles.emptyCart}>Your cart is empty!</h1>
+        ) : (
+          ""
+        )}
       </div>
-      <button onClick={handleCheckout}>Check out</button>
     </div>
   );
 }

@@ -6,7 +6,6 @@ function MainBanner() {
     <div className={styles.mainBanner}>
       <h1>Where variety meets quality.</h1>
       <h2>Quality products, Great prices.</h2>
-      <div className={styles.imagePlaceholder}>image placeholder</div>
     </div>
   );
 }
@@ -15,7 +14,7 @@ function StoreBanner() {
   return (
     <div className={styles.storeBanner}>
       <h2>Join the fun.</h2>
-      <button>Sign Up</button>
+      <Link to="/home">Sign Up</Link>
       <Link to="/store">Shop</Link>
     </div>
   );

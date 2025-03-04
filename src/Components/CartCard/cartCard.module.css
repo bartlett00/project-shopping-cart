@@ -1,0 +1,66 @@
+.cartCard {
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  max-width: 2000px;
+}
+
+.cartCard,
+.nameAndImg {
+  display: flex;
+  height: 200px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.nameAndImg > img {
+  height: 150px;
+}
+
+.nameAndImg > h1 {
+  font-size: 1.2rem;
+  max-width: 200px;
+}
+
+.cartCardBtns {
+  display: flex;
+  justify-content: center;
+  height: min-content;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.cartCardBtns > button {
+  border-radius: 5px;
+}
+
+.cartCardBtns > button:active {
+  background-color: var(--darker-green);
+  color: white;
+}
+
+.cartCardBtns > input {
+  width: 1.5rem;
+  text-align: end;
+}
+
+.updateQuantity {
+  margin: 0 1rem;
+}
+
+.updateQuantity,
+.delete {
+  border-radius: 5px;
+}
+
+.updateQuantity:hover {
+  color: white;
+  background-color: var(--darker-green);
+}
+
+.delete:hover {
+  color: white;
+  background-color: var(--main-orange);
+}

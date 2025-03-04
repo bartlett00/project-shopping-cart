@@ -1,0 +1,34 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: top;
+}
+
+.locationInfo > h1,
+.contactInfo > h1,
+.footerLinks > h1 {
+  color: var(--darker-green);
+}
+
+.locationInfo {
+  display: grid;
+  grid-template-columns: max-content;
+}
+
+.contactInfo {
+  display: grid;
+}
+
+.footerLinks {
+  display: grid;
+}
+
+.footerLinks > a {
+  text-decoration: none;
+  color: var(--darker-green);
+}
+
+.footerLinks > a:hover {
+  color: var(--main-orange);
+}

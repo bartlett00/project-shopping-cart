@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import styles from "./cartCard.module.css";
 
 export default function CartCard({
   item,
@@ -30,8 +31,6 @@ export default function CartCard({
 
   function removeFromCart(item, cart, cartCount, setCart, setCartCount) {
     if (confirm("Do you want to remove this item from your cart?")) {
-      const itemIndex = cart.indexOf(cart.find((e) => e.id == item.id));
-      console.log(itemIndex);
       const newCart = cart.filter((e) => e.id !== item.id);
       setCart([...newCart]);
       setCartCount(cartCount - item.quantity);
@@ -46,20 +45,17 @@ export default function CartCard({
     cart,
     setCart
   ) {
-    //if quantity in input is diff from item quantity
-    //update item quantity
-    //update cart quantity
-
+    if (quantity == item.quantity) {
+      return;
+    }
     if (quantity !== item.quantity) {
       if (quantity === 0) {
         removeFromCart(item, cart, cartCount, setCart, setCartCount);
       } else {
-        //TODO: give user feedback for pressing button
         let newCartCount = cartCount - item.quantity;
-        const updatedItem = { ...item, quantity: item.quantity - quantity };
+        const updatedItem = { ...item, quantity: quantity };
+        setQuantity(quantity);
         setCartCount(newCartCount + updatedItem.quantity);
-        const itemIndex = cart.indexOf(cart.find((e) => e.id == item.id));
-        console.log(itemIndex);
         const newCart = cart.filter((e) => e.id !== item.id);
         setCart([...newCart, updatedItem]);
       }
@@ -67,37 +63,47 @@ export default function CartCard({
   }
 
   return (
-    <div>
-      <h1>{itemData.title}</h1>
-      <img src={itemData.image}></img>
-      <button onClick={() => handleQuantity(quantity, setQuantity, true)}>
-        +
-      </button>
-      <input type="text" onChange={handleManualInput} value={quantity}></input>
-      <button onClick={() => handleQuantity(quantity, setQuantity, false)}>
-        -
-      </button>
-      <button
-        onClick={() =>
-          handleUpdateQuantity(
-            itemData,
-            quantity,
-            cartCount,
-            setCartCount,
-            cart,
-            setCart
-          )
-        }
-      >
-        Update Quantity
-      </button>
-      <button
-        onClick={() =>
-          removeFromCart(itemData, cart, cartCount, setCart, setCartCount)
-        }
-      >
-        Delete
-      </button>
+    <div id={`item-${itemData.id}`} className={styles.cartCard}>
+      <div className={styles.nameAndImg}>
+        <h1>{itemData.title}</h1>
+        <img src={itemData.image}></img>
+      </div>
+      <div className={styles.cartCardBtns}>
+        <button onClick={() => handleQuantity(quantity, setQuantity, false)}>
+          -
+        </button>
+        <input
+          type="text"
+          onChange={handleManualInput}
+          value={quantity}
+        ></input>
+        <button onClick={() => handleQuantity(quantity, setQuantity, true)}>
+          +
+        </button>
+        <button
+          className={styles.updateQuantity}
+          onClick={() =>
+            handleUpdateQuantity(
+              itemData,
+              quantity,
+              cartCount,
+              setCartCount,
+              cart,
+              setCart
+            )
+          }
+        >
+          Update Quantity
+        </button>
+        <button
+          className={styles.delete}
+          onClick={() =>
+            removeFromCart(itemData, cart, cartCount, setCart, setCartCount)
+          }
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,14 +1,36 @@
 * {
-  background-color: #f9f7f7;
+  background-color: white;
 }
 
 .mainBanner {
-  text-align: center;
-  color: #112d4e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 450px;
+  background-color: var(--softer-green);
 }
 
-/*TODO: Fix editor not recognizing composes keyword*/
+.mainBanner > * {
+  background-color: var(--softer-green);
+}
+
 .storeBanner {
   composes: mainBanner;
-  color: #112d4e;
+  background-color: var(--darker-green);
+}
+
+.storeBanner > * {
+  background-color: var(--darker-green);
+}
+.storeBanner > h2 {
+  color: white;
+}
+.storeBanner > a {
+  text-decoration: none;
+  color: var(--softer-green);
+}
+
+.storeBanner > a:hover {
+  color: var(--main-orange);
 }

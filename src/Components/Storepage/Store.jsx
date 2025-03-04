@@ -5,18 +5,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./store.module.css";
 
-// const testItems = [
-//   {
-//     id: 1,
-//     title: "Placeholder Item",
-//     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-//     quantity: 0,
-//   },
-// ];
-
 function Cards({ items, setCartCount, cartCount, setCart, cart }) {
   return (
-    <>
+    <div className={styles.cards}>
       {items.map((item) => {
         return (
           <Card
@@ -29,12 +20,13 @@ function Cards({ items, setCartCount, cartCount, setCart, cart }) {
           />
         );
       })}
-    </>
+    </div>
   );
 }
 
 export default function Store() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { cartCount, setCartCount, setCart, cart } = useOutletContext();
 
   useEffect(() => {
@@ -46,13 +38,17 @@ export default function Store() {
         return result.json();
       })
       .then((json) => setData(json))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   }, []);
 
   return (
     <div className={styles.store}>
       <h1>Find something you&#39;ll love.</h1>
-      <Link to="/cart">Checkout</Link>
+      <Link to="/cart" className={styles.checkout}>
+        Checkout
+      </Link>
+      {loading ? <p>loading items...</p> : ""}
       <Cards
         items={data}
         setCartCount={setCartCount}

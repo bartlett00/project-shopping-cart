@@ -1,18 +1,28 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import styles from "./nav.module.css";
 
 function CartIcon({ cartCount }) {
-  //TODO: change "Cart" to shopping cart icon
-  return <Link to="/cart">Cart {cartCount}</Link>;
+  return (
+    <Link to="/cart" className={styles.navLink}>
+      Cart {cartCount}
+    </Link>
+  );
 }
 
 export default function Nav({ cartCount }) {
   return (
-    <nav>
-      <div>Orange</div>
-      <Link to="/home">Homepage</Link>
-      <Link to="/store">Store</Link>
-      <CartIcon cartCount={cartCount} />
+    <nav className={styles.nav}>
+      <h1 className={styles.compName}>Orange</h1>
+      <div className={styles.linkContainer}>
+        <Link to="/home" className={styles.navLink}>
+          Homepage
+        </Link>
+        <Link to="/store" className={styles.navLink}>
+          Store
+        </Link>
+        <CartIcon cartCount={cartCount} />
+      </div>
     </nav>
   );
 }

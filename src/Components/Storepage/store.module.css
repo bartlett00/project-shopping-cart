@@ -1,3 +1,66 @@
 .store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
   display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  justify-items: center;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 1800px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes checkout {
+  from {
+    background-color: white;
+  }
+
+  to {
+    background-color: var(--main-orange);
+    color: white;
+  }
+}
+
+.checkout {
+  text-decoration: none;
+  color: var(--darker-green);
+  font-size: 1.75rem;
+  text-align: center;
+  border: 3px solid var(--dark-gray);
+  border-radius: 5px;
+  padding: 5px;
+  width: min-content;
+}
+
+.checkout:hover {
+  animation: checkout 750ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
 }

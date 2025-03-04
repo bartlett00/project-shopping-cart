@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  --main-orange: #ee7c19;
+  --off-white-bg: #fff5e4;
+  --softer-green: #c1d8c3;
+  --darker-green: #436e5d;
+  --dark-gray: #303030;
+  --link-hover: #7e3f00;
+}
+
+* {
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin: 0;
+}

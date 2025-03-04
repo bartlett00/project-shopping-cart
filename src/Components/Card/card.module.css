@@ -1,0 +1,72 @@
+.storeCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+  width: 400px;
+  height: 500px;
+  border: 5px solid var(--darker-green);
+  border-radius: 15px;
+  justify-items: center;
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.storeCard > img {
+  width: 175px;
+  height: auto;
+}
+
+.storeCard > h1 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.buttonContainer > button {
+  border-radius: 5px;
+  width: max-content;
+  justify-self: center;
+}
+
+.quantityControls {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5px;
+  height: 25px;
+}
+
+.quantityControls > input {
+  width: 1.5rem;
+  text-align: end;
+}
+
+.quantityControls > button {
+  border-radius: 5px;
+  border: 2px solid var(--dark-gray);
+  font-weight: bold;
+  text-align: center;
+}
+
+.quantityControls > button:active {
+  background-color: var(--darker-green);
+  color: white;
+}
+
+.quantityControls > input {
+  border: 2px solid var(--dark-gray);
+  border-radius: 5px;
+}
+
+.addToCart:hover {
+  background-color: var(--darker-green);
+  color: white;
+}
